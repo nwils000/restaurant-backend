@@ -30,10 +30,6 @@ class CustomerOrderLinkViewSet(viewsets.ModelViewSet):
     queryset = CustomerOrderLink.objects.all()
     serializer_class = CustomerOrderLinkSerializer
 
-class CustomerOrderDetailViewSet(viewsets.ModelViewSet):
-    queryset = CustomerOrderDetail.objects.all()
-    serializer_class = CustomerOrderDetailSerializer
-
 class FoodOrderDetailViewSet(viewsets.ModelViewSet):
     queryset = FoodOrderDetail.objects.all()
     serializer_class = FoodOrderDetailSerializer

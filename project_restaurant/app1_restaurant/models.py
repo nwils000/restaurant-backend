@@ -26,17 +26,14 @@ class CustomerOrderLink(models.Model):
     total_price = models.DecimalField(decimal_places=2, max_digits=5)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT, related_name='customer_orders')
     order = models.ForeignKey(Order, on_delete=models.PROTECT)
-
-class CustomerOrderDetail(models.Model):
-    customer_order_link = models.ForeignKey(CustomerOrderLink, on_delete=models.PROTECT)
-    order_time = models.DateTimeField(auto_now_add=True)
-    notes = models.TextField()
     food_order_details = models.ManyToManyField(FoodItem, through='FoodOrderDetail')
 
 class FoodOrderDetail(models.Model):
     food_item = models.ForeignKey(FoodItem, on_delete=models.PROTECT)
-    customer_order_detail = models.ForeignKey(CustomerOrderDetail, on_delete=models.PROTECT)
+    customer_order_detail = models.ForeignKey(CustomerOrderLink, on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField()
     special_requests = models.TextField()
+
+    
 
     

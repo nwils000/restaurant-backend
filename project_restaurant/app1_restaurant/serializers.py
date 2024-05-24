@@ -31,11 +31,6 @@ class CustomerOrderLinkSerializer(serializers.ModelSerializer):
         model = CustomerOrderLink
         fields = ['id', 'total_price', 'customer', 'order']
 
-class CustomerOrderDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CustomerOrderDetail 
-        fields = ['id', 'customer_order_link', 'order_time', 'notes']
-
 class FoodOrderDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodOrderDetail

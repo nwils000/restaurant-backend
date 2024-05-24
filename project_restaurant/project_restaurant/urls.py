@@ -27,7 +27,6 @@ router.register(r'food-items', FoodItemViewSet)
 router.register(r'order', OrderViewSet)
 router.register(r'customer', CustomerViewSet)
 router.register(r'customer-order-link', CustomerOrderLinkViewSet)
-router.register(r'customer-order-detail', CustomerOrderDetailViewSet)
 router.register(r'food-order-detail', FoodOrderDetailViewSet)
 router.register(r'all-food-information', AllFoodInformationViewSet, basename='allfoodinfo')
 
